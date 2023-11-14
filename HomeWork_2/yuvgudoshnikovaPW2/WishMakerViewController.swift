@@ -35,6 +35,9 @@ enum Constants {
     static let buttonSide: CGFloat = 100
     static let buttonText: String? = "My wishes"
     static let buttonRadius: CGFloat = 20
+    
+    static let tableCornerRadius:CGFloat = 20
+    static let tableOffset: CGFloat = 20
 }
 
 var backGroundColours : KeyValuePairs =
