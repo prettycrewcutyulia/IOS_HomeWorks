@@ -16,6 +16,7 @@
 		489E74512ACA207D00A64428 /* yuvgudoshnikovaPW2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489E74502ACA207D00A64428 /* yuvgudoshnikovaPW2UITests.swift */; };
 		489E74532ACA207D00A64428 /* yuvgudoshnikovaPW2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489E74522ACA207D00A64428 /* yuvgudoshnikovaPW2UITestsLaunchTests.swift */; };
 		489E74602ACA2EB500A64428 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489E745F2ACA2EB500A64428 /* CustomSlider.swift */; };
+		48E8F4752B042973002739A0 /* UIViewPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E8F4742B042973002739A0 /* UIViewPin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		489E74502ACA207D00A64428 /* yuvgudoshnikovaPW2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yuvgudoshnikovaPW2UITests.swift; sourceTree = "<group>"; };
 		489E74522ACA207D00A64428 /* yuvgudoshnikovaPW2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yuvgudoshnikovaPW2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		489E745F2ACA2EB500A64428 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		48E8F4742B042973002739A0 /* UIViewPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewPin.swift; path = ../../../../../Downloads/UIViewPin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		489E742E2ACA207A00A64428 /* yuvgudoshnikovaPW2 */ = {
 			isa = PBXGroup;
 			children = (
+				48E8F4742B042973002739A0 /* UIViewPin.swift */,
 				489E742F2ACA207A00A64428 /* AppDelegate.swift */,
 				489E74312ACA207A00A64428 /* SceneDelegate.swift */,
 				489E74332ACA207A00A64428 /* WishMakerViewController.swift */,
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48E8F4752B042973002739A0 /* UIViewPin.swift in Sources */,
 				489E74342ACA207A00A64428 /* WishMakerViewController.swift in Sources */,
 				489E74302ACA207A00A64428 /* AppDelegate.swift in Sources */,
 				489E74322ACA207A00A64428 /* SceneDelegate.swift in Sources */,

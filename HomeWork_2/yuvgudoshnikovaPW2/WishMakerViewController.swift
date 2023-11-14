@@ -30,6 +30,11 @@ enum Constants {
     
     static let hexInputHight: CGFloat = 100
     
+    static let buttonHeight: CGFloat = 50
+    static let buttonBottom: CGFloat = 50
+    static let buttonSide: CGFloat = 100
+    static let buttonText: String? = "My wishes"
+    static let buttonRadius: CGFloat = 20
 }
 
 var backGroundColours : KeyValuePairs =
@@ -43,6 +48,7 @@ var backGroundColours : KeyValuePairs =
         ]
 
 final class WishMakerViewController: UIViewController {
+    private let addWishButton: UIButton = UIButton(type: .system)
     
     private var titleView:UILabel!
     private var descriptionView:UILabel!
@@ -60,11 +66,28 @@ final class WishMakerViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
     }
+    private func configureAddWishButton() {
+        view.addSubview(addWishButton)
+        addWishButton.setHeight(Constants.buttonHeight)
+        addWishButton.pinBottom(to: view, Constants.buttonBottom)
+        addWishButton.pinHorizontal(to: view, Constants.buttonSide)
+
+        addWishButton.backgroundColor = .white
+        addWishButton.setTitleColor(.systemPink, for: .normal)
+        addWishButton.setTitle(Constants.buttonText, for: .normal)
     
+        addWishButton.layer.cornerRadius = Constants.buttonRadius
+        addWishButton.addTarget(self, action: #selector(addWishButtonPressed), for: .touchUpInside)
+    }
+    
+    @objc
+    private func addWishButtonPressed() {
+    // this will be done later!
+    }
     
     private func configureUI() {
         view.backgroundColor = .systemPink
-        
+        configureAddWishButton()
         configureTitle()
         configureDescription()
         configureSlidersColor()
@@ -158,7 +181,7 @@ final class WishMakerViewController: UIViewController {
         NSLayoutConstraint.activate([
             stackSliders.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackSliders.leadingAnchor.constraint (equalTo: view.leadingAnchor, constant: Constants.stackSliderLeading),
-            stackSliders.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: Constants.stackSliderBottom)
+            stackSliders.bottomAnchor.constraint(equalTo: addWishButton.topAnchor, constant: Constants.stackSliderBottom)
         ])
     }
     
