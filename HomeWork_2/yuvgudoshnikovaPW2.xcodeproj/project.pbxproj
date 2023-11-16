@@ -49,6 +49,7 @@
 		4869B4132B05CFED0055B9B3 /* Wishes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wishes.xcdatamodel; sourceTree = "<group>"; };
 		4869B4152B05D1A00055B9B3 /* Wish+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Wish+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4869B4162B05D1A00055B9B3 /* Wish+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Wish+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4869B41C2B0681220055B9B3 /* UIViewPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPin.swift; sourceTree = "<group>"; };
 		489E742C2ACA207A00A64428 /* yuvgudoshnikovaPW2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yuvgudoshnikovaPW2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		489E742F2ACA207A00A64428 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		489E74312ACA207A00A64428 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,11 +93,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4869B4192B0680B00055B9B3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				489E74332ACA207A00A64428 /* WishMakerViewController.swift */,
+				48E8F4762B042EEA002739A0 /* WishStoringViewController.swift */,
+				4869B4102B05C74D0055B9B3 /* EditWishCellController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4869B41A2B0680EB0055B9B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4869B40C2B0508760055B9B3 /* AddWishCell.swift */,
+				48E8F4782B0432F2002739A0 /* WrittenWishCell.swift */,
+				489E745F2ACA2EB500A64428 /* CustomSlider.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4869B41B2B0681120055B9B3 /* UIViewExtension */ = {
+			isa = PBXGroup;
+			children = (
+				4869B41C2B0681220055B9B3 /* UIViewPin.swift */,
+			);
+			path = UIViewExtension;
+			sourceTree = "<group>";
+		};
+		4869B41D2B06812E0055B9B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4869B4162B05D1A00055B9B3 /* Wish+CoreDataProperties.swift */,
+				4869B4152B05D1A00055B9B3 /* Wish+CoreDataClass.swift */,
+				4869B4122B05CFED0055B9B3 /* Wishes.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		489E74232ACA207A00A64428 = {
 			isa = PBXGroup;
 			children = (
-				4869B4152B05D1A00055B9B3 /* Wish+CoreDataClass.swift */,
-				4869B4162B05D1A00055B9B3 /* Wish+CoreDataProperties.swift */,
 				489E742E2ACA207A00A64428 /* yuvgudoshnikovaPW2 */,
 				489E74452ACA207D00A64428 /* yuvgudoshnikovaPW2Tests */,
 				489E744F2ACA207D00A64428 /* yuvgudoshnikovaPW2UITests */,
@@ -117,19 +154,16 @@
 		489E742E2ACA207A00A64428 /* yuvgudoshnikovaPW2 */ = {
 			isa = PBXGroup;
 			children = (
-				4869B40C2B0508760055B9B3 /* AddWishCell.swift */,
+				4869B41D2B06812E0055B9B3 /* Model */,
+				4869B41B2B0681120055B9B3 /* UIViewExtension */,
+				4869B41A2B0680EB0055B9B3 /* View */,
+				4869B4192B0680B00055B9B3 /* Controllers */,
 				48E8F4742B042973002739A0 /* UIViewPin.swift */,
 				489E742F2ACA207A00A64428 /* AppDelegate.swift */,
 				489E74312ACA207A00A64428 /* SceneDelegate.swift */,
-				489E74332ACA207A00A64428 /* WishMakerViewController.swift */,
 				489E74382ACA207D00A64428 /* Assets.xcassets */,
 				489E743A2ACA207D00A64428 /* LaunchScreen.storyboard */,
 				489E743D2ACA207D00A64428 /* Info.plist */,
-				489E745F2ACA2EB500A64428 /* CustomSlider.swift */,
-				48E8F4762B042EEA002739A0 /* WishStoringViewController.swift */,
-				48E8F4782B0432F2002739A0 /* WrittenWishCell.swift */,
-				4869B4102B05C74D0055B9B3 /* EditWishCellController.swift */,
-				4869B4122B05CFED0055B9B3 /* Wishes.xcdatamodeld */,
 			);
 			path = yuvgudoshnikovaPW2;
 			sourceTree = "<group>";
