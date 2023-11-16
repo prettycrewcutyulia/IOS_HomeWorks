@@ -59,6 +59,12 @@ extension WishStoringViewController: UITableViewDataSource {
             
             guard let addCell = cell as? AddWishCell else {return cell}
             
+            addCell.addWish = {
+                [weak self] text in
+                self?.wishArray.append(text)
+                self?.table.reloadData()
+            }
+            
             return addCell
 
         } else {
