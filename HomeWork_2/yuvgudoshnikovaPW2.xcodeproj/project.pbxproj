@@ -12,6 +12,7 @@
 		4869B4142B05CFED0055B9B3 /* Wishes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4869B4122B05CFED0055B9B3 /* Wishes.xcdatamodeld */; };
 		4869B4172B05D1A00055B9B3 /* Wish+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869B4152B05D1A00055B9B3 /* Wish+CoreDataClass.swift */; };
 		4869B4182B05D1A00055B9B3 /* Wish+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869B4162B05D1A00055B9B3 /* Wish+CoreDataProperties.swift */; };
+		4869B41E2B0682180055B9B3 /* UIViewPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869B41C2B0681220055B9B3 /* UIViewPin.swift */; };
 		489E74302ACA207A00A64428 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489E742F2ACA207A00A64428 /* AppDelegate.swift */; };
 		489E74322ACA207A00A64428 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489E74312ACA207A00A64428 /* SceneDelegate.swift */; };
 		489E74342ACA207A00A64428 /* WishMakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489E74332ACA207A00A64428 /* WishMakerViewController.swift */; };
@@ -21,7 +22,6 @@
 		489E74512ACA207D00A64428 /* yuvgudoshnikovaPW2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489E74502ACA207D00A64428 /* yuvgudoshnikovaPW2UITests.swift */; };
 		489E74532ACA207D00A64428 /* yuvgudoshnikovaPW2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489E74522ACA207D00A64428 /* yuvgudoshnikovaPW2UITestsLaunchTests.swift */; };
 		489E74602ACA2EB500A64428 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489E745F2ACA2EB500A64428 /* CustomSlider.swift */; };
-		48E8F4752B042973002739A0 /* UIViewPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E8F4742B042973002739A0 /* UIViewPin.swift */; };
 		48E8F4772B042EEA002739A0 /* WishStoringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E8F4762B042EEA002739A0 /* WishStoringViewController.swift */; };
 		48E8F4792B0432F2002739A0 /* WrittenWishCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E8F4782B0432F2002739A0 /* WrittenWishCell.swift */; };
 /* End PBXBuildFile section */
@@ -63,7 +63,6 @@
 		489E74502ACA207D00A64428 /* yuvgudoshnikovaPW2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yuvgudoshnikovaPW2UITests.swift; sourceTree = "<group>"; };
 		489E74522ACA207D00A64428 /* yuvgudoshnikovaPW2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yuvgudoshnikovaPW2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		489E745F2ACA2EB500A64428 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
-		48E8F4742B042973002739A0 /* UIViewPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewPin.swift; path = ../../../../../Downloads/UIViewPin.swift; sourceTree = "<group>"; };
 		48E8F4762B042EEA002739A0 /* WishStoringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishStoringViewController.swift; sourceTree = "<group>"; };
 		48E8F4782B0432F2002739A0 /* WrittenWishCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrittenWishCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,7 +157,6 @@
 				4869B41B2B0681120055B9B3 /* UIViewExtension */,
 				4869B41A2B0680EB0055B9B3 /* View */,
 				4869B4192B0680B00055B9B3 /* Controllers */,
-				48E8F4742B042973002739A0 /* UIViewPin.swift */,
 				489E742F2ACA207A00A64428 /* AppDelegate.swift */,
 				489E74312ACA207A00A64428 /* SceneDelegate.swift */,
 				489E74382ACA207D00A64428 /* Assets.xcassets */,
@@ -320,8 +318,8 @@
 				48E8F4792B0432F2002739A0 /* WrittenWishCell.swift in Sources */,
 				48E8F4772B042EEA002739A0 /* WishStoringViewController.swift in Sources */,
 				4869B4172B05D1A00055B9B3 /* Wish+CoreDataClass.swift in Sources */,
-				48E8F4752B042973002739A0 /* UIViewPin.swift in Sources */,
 				489E74342ACA207A00A64428 /* WishMakerViewController.swift in Sources */,
+				4869B41E2B0682180055B9B3 /* UIViewPin.swift in Sources */,
 				489E74302ACA207A00A64428 /* AppDelegate.swift in Sources */,
 				4869B4112B05C74D0055B9B3 /* EditWishCellController.swift in Sources */,
 				489E74322ACA207A00A64428 /* SceneDelegate.swift in Sources */,
