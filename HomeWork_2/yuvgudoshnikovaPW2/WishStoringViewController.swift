@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 final class WishStoringViewController: UIViewController {
     
@@ -18,14 +19,24 @@ final class WishStoringViewController: UIViewController {
     }
     
     private let table: UITableView = UITableView(frame: .zero)
-    private var wishArray: [String] = []
-    private let defaults = UserDefaults.standard
+    private var wishArray: [Wish] = []
+    static let applicationDelegate = UIApplication.shared.delegate as! AppDelegate
+    let context = applicationDelegate.persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        wishArray = defaults.array(forKey: Constants.wishesKey) as? [String] ?? []
+        fetchWishes()
         configureUI()
     }
+    private func fetchWishes() {
+            let fetchRequest: NSFetchRequest<Wish> = Wish.fetchRequest()
+            do {
+                wishArray = try context.fetch(fetchRequest)
+                table.reloadData()
+            } catch {
+                print("Error fetching wishes: \(error.localizedDescription)")
+            }
+        }
     
     private func configureUI() {
         view.backgroundColor = .white
@@ -65,8 +76,11 @@ extension WishStoringViewController: UITableViewDataSource {
             
             addCell.addWish = {
                 [weak self] text in
-                self?.wishArray.append(text)
-                self?.defaults.set(self?.wishArray, forKey: Constants.wishesKey)
+                let newWish = Wish(context: self!.context)
+                newWish.wish = text
+                self?.wishArray.append(newWish)
+                //self?.defaults.set(self?.wishArray, forKey: Constants.wishesKey)
+                WishStoringViewController.applicationDelegate.saveContext()
                 self?.table.reloadData()
             }
             
@@ -81,24 +95,26 @@ extension WishStoringViewController: UITableViewDataSource {
             )
             guard let wishCell = cell as? WrittenWishCell else { return cell }
             wishCell.contentView.isUserInteractionEnabled = false
-            
-            wishCell.configure(with: wishArray[indexPath.row])
+            let wish = wishArray[indexPath.row]
+            wishCell.configure(with: wish.wish ?? "")
             wishCell.deleteWish = {
                 [weak self] in 
+                let wishToRemove = self?.wishArray[indexPath.row]
+                self?.context.delete(wishToRemove!)
                 self?.wishArray.remove(at: indexPath.row)
-                self?.defaults.set(self?.wishArray, forKey: Constants.wishesKey)
+                WishStoringViewController.applicationDelegate.saveContext()
                 self?.table.reloadData()
             }
             
             wishCell.editWish = {
                 [weak self] text in
                 let editController = EditWishCellController()
-//                editController.indexPathRow = indexPath.row
                 editController.wishTextView.text = text
                 editController.editWish = {
                     [weak self] text in
-                    self?.wishArray[indexPath.row] = text
-                    self?.defaults.set(self?.wishArray, forKey: Constants.wishesKey)
+                    let editedWish = self!.wishArray[indexPath.row]
+                    editedWish.wish = text
+                    WishStoringViewController.applicationDelegate.saveContext()
                     self?.table.reloadData()
                 }
                 self?.present(editController, animated: true)
