@@ -7,11 +7,6 @@
 
 import UIKit
 
-protocol WrittenWishCellDelegate: AnyObject {
-    func didTapEdit(cell: WrittenWishCell)
-    func didTapDelete(cell: WrittenWishCell)
-}
-
 final class WrittenWishCell: UITableViewCell {
     static let reuseId: String = "WrittenWishCell"
     private enum Constants {
@@ -22,9 +17,11 @@ final class WrittenWishCell: UITableViewCell {
         static let wishLabelOffset: CGFloat = 8
     }
     var deleteWish: (() -> ())?
+    var editWish: ((String) -> ())?
     
-    weak var delegate: WrittenWishCellDelegate?
     let deleteButton = UIButton(type: .system)
+    let editButton = UIButton(type: .system)
+    
     private let wishLabel: UILabel = UILabel()
     let wrap: UIStackView = UIStackView()
     // MARK: - Lifecycle
@@ -42,7 +39,6 @@ final class WrittenWishCell: UITableViewCell {
         wishLabel.numberOfLines = 0 // Разрешаем несколько строк в метке
         wishLabel.sizeToFit()
         wishLabel.setWidth(100)
-//        wishLabel.backgroundColor = .red
     }
     
     private func configureUI() {
@@ -57,13 +53,14 @@ final class WrittenWishCell: UITableViewCell {
         wrap.addSubview(wishLabel)
         wishLabel.pinVertical(to: wrap, Constants.wishLabelOffset)
         wishLabel.pinLeft(to: wrap, Constants.wishLabelOffset)
-        wishLabel.pin(to: wrap, Constants.wishLabelOffset)
-
+//        wishLabel.pin(to: wrap, Constants.wishLabelOffset)
         addDeleteButton()
+        addEditButton()
+        
+        wishLabel.pinRight(to: editButton.leadingAnchor, Constants.wishLabelOffset)
     }
         
     private func addDeleteButton() {
-        //deleteButton.backgroundColor = .green
         deleteButton.setTitle("Delete", for: .normal)
         deleteButton.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
         deleteButton.isEnabled = true
@@ -72,10 +69,22 @@ final class WrittenWishCell: UITableViewCell {
         deleteButton.pinRight(to: wrap, Constants.wishLabelOffset)
         deleteButton.pinVertical(to: wrap, Constants.wishLabelOffset)
         deleteButton.setWidth(50)
-        
+    }
+    private func addEditButton() {
+        editButton.setTitle("Edit", for: .normal)
+        editButton.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
+        editButton.isEnabled = true
+        editButton.frame = CGRect(x: frame.width - 50, y: 10, width: 40, height: 20)
+        wrap.addSubview(editButton)
+        editButton.pinRight(to: deleteButton.leadingAnchor, Constants.wishLabelOffset)
+        editButton.pinVertical(to: wrap, Constants.wishLabelOffset)
+        editButton.setWidth(50)
     }
         
-        @objc private func deleteButtonTapped() {
-            deleteWish?()
-        }
+    @objc private func deleteButtonTapped() {
+        deleteWish?()
+    }
+    @objc private func editButtonTapped() {
+        editWish?(wishLabel.text!)
+    }
 }

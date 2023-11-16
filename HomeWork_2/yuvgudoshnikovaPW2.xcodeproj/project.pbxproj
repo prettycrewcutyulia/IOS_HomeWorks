@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4869B40D2B0508760055B9B3 /* AddWishCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869B40C2B0508760055B9B3 /* AddWishCell.swift */; };
+		4869B4112B05C74D0055B9B3 /* EditWishCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869B4102B05C74D0055B9B3 /* EditWishCellController.swift */; };
 		489E74302ACA207A00A64428 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489E742F2ACA207A00A64428 /* AppDelegate.swift */; };
 		489E74322ACA207A00A64428 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489E74312ACA207A00A64428 /* SceneDelegate.swift */; };
 		489E74342ACA207A00A64428 /* WishMakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489E74332ACA207A00A64428 /* WishMakerViewController.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		4869B40C2B0508760055B9B3 /* AddWishCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWishCell.swift; sourceTree = "<group>"; };
+		4869B4102B05C74D0055B9B3 /* EditWishCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWishCellController.swift; sourceTree = "<group>"; };
 		489E742C2ACA207A00A64428 /* yuvgudoshnikovaPW2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yuvgudoshnikovaPW2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		489E742F2ACA207A00A64428 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		489E74312ACA207A00A64428 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				489E745F2ACA2EB500A64428 /* CustomSlider.swift */,
 				48E8F4762B042EEA002739A0 /* WishStoringViewController.swift */,
 				48E8F4782B0432F2002739A0 /* WrittenWishCell.swift */,
+				4869B4102B05C74D0055B9B3 /* EditWishCellController.swift */,
 			);
 			path = yuvgudoshnikovaPW2;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				48E8F4752B042973002739A0 /* UIViewPin.swift in Sources */,
 				489E74342ACA207A00A64428 /* WishMakerViewController.swift in Sources */,
 				489E74302ACA207A00A64428 /* AppDelegate.swift in Sources */,
+				4869B4112B05C74D0055B9B3 /* EditWishCellController.swift in Sources */,
 				489E74322ACA207A00A64428 /* SceneDelegate.swift in Sources */,
 				489E74602ACA2EB500A64428 /* CustomSlider.swift in Sources */,
 			);
