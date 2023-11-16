@@ -9,9 +9,26 @@ import Foundation
 import UIKit
 
 final class EditWishCellController: UIViewController, UITextViewDelegate {
+    
+    private enum Constants {
+        static let wishTextHeight:CGFloat = 200
+        static let wishTextWidth:CGFloat = 400
+        static let wishTextFont:CGFloat = 20
+        static let wishTextBackgroundColor:UIColor = .systemGray5
+        static let wishTextColor:UIColor = .black
+        
+        static let editButtonHeight: CGFloat = 40
+        static let editButtonWidth:CGFloat = 400
+        static let editButtonCornerRadius:CGFloat = 20
+        static let editButtomBackgroundColor:UIColor = .systemIndigo
+        
+        static let stackSpacing:CGFloat = 20
+        static let stackMargins:CGFloat = 16
+        static let stackBackgroundColor:UIColor = .systemGray5
+    }
 
     let wishTextView: UITextView = UITextView()
-    private let addButton: UIButton =  UIButton()
+    private let editButton: UIButton =  UIButton()
     var editWish: ((String) -> ())?
     
     override func viewDidLoad() {
@@ -20,37 +37,46 @@ final class EditWishCellController: UIViewController, UITextViewDelegate {
     }
     
     private func configureUI() {
+        configureWishText()
+        configureEditButton()
+        configureStack()
+    }
+    
+    private func configureWishText() {
         wishTextView.delegate = self
-        wishTextView.font = .systemFont(ofSize: 20, weight: .regular)
-        wishTextView.textColor = .tertiaryLabel
-        wishTextView.backgroundColor = .systemGray5
-        wishTextView.setHeight(200)
-        wishTextView.setWidth(400)
-        wishTextView.textColor = UIColor.black
-
-         //Конфигурация кнопки
-        addButton.setTitle("Edit wish", for: .normal)
-        addButton.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
-        addButton.setHeight(40)
-        addButton.setWidth(400)
-        addButton.backgroundColor = .systemIndigo
-        addButton.layer.cornerRadius = 20
-        
-        let stackView = UIStackView(arrangedSubviews: [wishTextView, addButton])
+        wishTextView.font = .systemFont(ofSize: Constants.wishTextFont, weight: .regular)
+        wishTextView.backgroundColor = Constants.wishTextBackgroundColor
+        wishTextView.setHeight(Constants.wishTextHeight)
+        wishTextView.setWidth(Constants.wishTextWidth)
+        wishTextView.textColor = Constants.wishTextColor
+    }
+    
+    private func configureEditButton(){
+        //Конфигурация кнопки
+       editButton.setTitle("Edit wish", for: .normal)
+       editButton.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
+       editButton.setHeight(Constants.editButtonHeight)
+       editButton.setWidth(Constants.editButtonWidth)
+       editButton.backgroundColor = Constants.editButtomBackgroundColor
+       editButton.layer.cornerRadius = Constants.editButtonCornerRadius
+    }
+    
+    private func configureStack() {
+        let stackView = UIStackView(arrangedSubviews: [wishTextView, editButton])
         stackView.axis = .vertical
-        stackView.spacing = 20
+        stackView.spacing = Constants.stackSpacing
         stackView.distribution = .fill
         stackView.alignment = .center
         
         view.addSubview(stackView)
-        stackView.pinLeft(to: view, 16)
-        stackView.pinRight(to: view, 16)
-        stackView.pinTop(to: view, 16)
-        stackView.pinBottom(to: view, 16)
+        stackView.pinLeft(to: view, Constants.stackMargins)
+        stackView.pinRight(to: view, Constants.stackMargins)
+        stackView.pinTop(to: view, Constants.stackMargins)
+        stackView.pinBottom(to: view, Constants.stackMargins)
         stackView.clipsToBounds = true
-        stackView.backgroundColor = .systemGray5
+        stackView.backgroundColor = Constants.stackBackgroundColor
         stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        stackView.layoutMargins = UIEdgeInsets(top: Constants.stackMargins, left: Constants.stackMargins, bottom:Constants.stackMargins, right: Constants.stackMargins)
     }
     
     @objc private func editButtonTapped() {

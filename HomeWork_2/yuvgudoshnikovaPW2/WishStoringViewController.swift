@@ -16,6 +16,8 @@ final class WishStoringViewController: UIViewController {
         static let tableOffset: CGFloat = 20
         static let numberOfSections: Int = 2
         static let wishesKey:String = "wishes"
+        
+        static let headerTableHeight:CGFloat = 50
     }
     
     private let table: UITableView = UITableView(frame: .zero)
@@ -48,7 +50,7 @@ final class WishStoringViewController: UIViewController {
         let headerView = UILabel(frame: CGRect(x: 0,
                                               y: 0,
                                               width: table.frame.width,
-                                              height: 50))
+                                               height: Constants.headerTableHeight))
         headerView.text = "Wishes"
         headerView.textAlignment = .center
         table.tableHeaderView = headerView
