@@ -9,7 +9,7 @@ import UIKit
 final class WrittenWishCell: UITableViewCell {
     static let reuseId: String = "WrittenWishCell"
     private enum Constants {
-        static let wrapColor: UIColor = .white
+        static let wrapColor: UIColor = .systemGray5
         static let wrapRadius: CGFloat = 16
         static let wrapOffsetV: CGFloat = 5
         static let wrapOffsetH: CGFloat = 10

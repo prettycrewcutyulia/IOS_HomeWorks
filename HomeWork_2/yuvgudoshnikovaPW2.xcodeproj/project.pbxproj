@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4869B40D2B0508760055B9B3 /* AddWishCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869B40C2B0508760055B9B3 /* AddWishCell.swift */; };
 		489E74302ACA207A00A64428 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489E742F2ACA207A00A64428 /* AppDelegate.swift */; };
 		489E74322ACA207A00A64428 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489E74312ACA207A00A64428 /* SceneDelegate.swift */; };
 		489E74342ACA207A00A64428 /* WishMakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489E74332ACA207A00A64428 /* WishMakerViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4869B40C2B0508760055B9B3 /* AddWishCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWishCell.swift; sourceTree = "<group>"; };
 		489E742C2ACA207A00A64428 /* yuvgudoshnikovaPW2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yuvgudoshnikovaPW2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		489E742F2ACA207A00A64428 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		489E74312ACA207A00A64428 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		489E742E2ACA207A00A64428 /* yuvgudoshnikovaPW2 */ = {
 			isa = PBXGroup;
 			children = (
+				4869B40C2B0508760055B9B3 /* AddWishCell.swift */,
 				48E8F4742B042973002739A0 /* UIViewPin.swift */,
 				489E742F2ACA207A00A64428 /* AppDelegate.swift */,
 				489E74312ACA207A00A64428 /* SceneDelegate.swift */,
@@ -266,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4869B40D2B0508760055B9B3 /* AddWishCell.swift in Sources */,
 				48E8F4792B0432F2002739A0 /* WrittenWishCell.swift in Sources */,
 				48E8F4772B042EEA002739A0 /* WishStoringViewController.swift in Sources */,
 				48E8F4752B042973002739A0 /* UIViewPin.swift in Sources */,
