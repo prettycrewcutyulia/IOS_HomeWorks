@@ -27,6 +27,9 @@ final class WrittenWishCell: UITableViewCell {
     }
     func configure(with wish: String) {
         wishLabel.text = wish
+        wishLabel.numberOfLines = 0 // Разрешаем несколько строк в метке
+        wishLabel.sizeToFit()
+        //layoutIfNeeded() // Обновляем размеры ячейки
     }
     private func configureUI() {
         selectionStyle = .none
