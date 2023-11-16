@@ -68,12 +68,15 @@ final class AddWishCell: UITableViewCell, UITextViewDelegate {
     @objc private func addButtonTapped() {
         guard let text = wishTextView.text, !text.isEmpty else { return }
         addWish?(text)
-        wishTextView.text = "" // Очистить поле после добавления желания
+        wishTextView.text = "Type something"
+        wishTextView.textColor = UIColor.lightGray
     }
+    
     func textViewDidBeginEditing(_ textView: UITextView) {
             if textView.textColor == UIColor.lightGray {
                 textView.text = nil
                 textView.textColor = UIColor.black
             }
         }
+    
 }
