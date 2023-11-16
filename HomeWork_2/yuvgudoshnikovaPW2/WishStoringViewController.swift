@@ -45,6 +45,13 @@ final class WishStoringViewController: UIViewController {
     
     private func configureTable() {
         view.addSubview(table)
+        let headerView = UILabel(frame: CGRect(x: 0,
+                                              y: 0,
+                                              width: table.frame.width,
+                                              height: 50))
+        headerView.text = "Wishes"
+        headerView.textAlignment = .center
+        table.tableHeaderView = headerView
         table.backgroundColor = .white
         table.dataSource = self
         table.separatorStyle = .none
@@ -79,7 +86,6 @@ extension WishStoringViewController: UITableViewDataSource {
                 let newWish = Wish(context: self!.context)
                 newWish.wish = text
                 self?.wishArray.append(newWish)
-                //self?.defaults.set(self?.wishArray, forKey: Constants.wishesKey)
                 WishStoringViewController.applicationDelegate.saveContext()
                 self?.table.reloadData()
             }
