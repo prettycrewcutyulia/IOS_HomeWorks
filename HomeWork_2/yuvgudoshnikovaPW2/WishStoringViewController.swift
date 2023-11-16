@@ -8,7 +8,20 @@
 import Foundation
 import UIKit
 
-final class WishStoringViewController: UIViewController {
+final class WishStoringViewController: UIViewController, WrittenWishCellDelegate {
+    func didTapEdit(cell: WrittenWishCell) {
+        //
+    }
+    
+    func didTapDelete(cell: WrittenWishCell) {
+        if let indexPath = table.indexPath(for: cell) {
+            print(indexPath)
+                   wishArray.remove(at: indexPath.row)
+                   defaults.set(wishArray, forKey: Constants.wishesKey)
+                   table.reloadData()
+        }
+    }
+    
     private enum Constants {
         static let tableCornerRadius:CGFloat = 20
         static let tableOffset: CGFloat = 20
@@ -79,8 +92,15 @@ extension WishStoringViewController: UITableViewDataSource {
                 for: indexPath
             )
             guard let wishCell = cell as? WrittenWishCell else { return cell }
+            wishCell.contentView.isUserInteractionEnabled = false
             
             wishCell.configure(with: wishArray[indexPath.row])
+            wishCell.deleteWish = {
+                [weak self] in 
+                self?.wishArray.remove(at: indexPath.row)
+                self?.defaults.set(self?.wishArray, forKey: Constants.wishesKey)
+                self?.table.reloadData()
+            }
             
             return wishCell
         }
